@@ -24,8 +24,8 @@ La página de contacto contiene información de contacto para cualquier consulta
 
 ## Colaboradores
 
-Rangel Blanco Diego Alejandro
-Forero Rios Andrés Felipe
++ Rangel Blanco Diego Alejandro
++ Forero Rios Andrés Felipe
 
 ## Tecnologías utilizadas
 
