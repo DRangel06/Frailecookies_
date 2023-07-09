@@ -1,0 +1,74 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #C2E1C2;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #412b17;
+    padding: 50px;
+    color: white;
+    border-radius: 10px;
+}
+
+.form-container img {
+    position: absolute;
+    width: 70px;
+    padding-left: 5%;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container h1 {
+    text-align: center;
+}
+
+.form-container i {
+    color: white;
+    /* El color de la flecha */
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+    /* El tamaño de la flecha */
+}
+
+@media(max-width: 700px) {
+    body {
+        padding: 4em;
+    }
+    .form-container {
+        display: grid;
+    }
+    .form-container h1 {
+        text-align: center;
+        justify-content: center;
+        display: block;
+    }
+    img {
+        display: none;
+        justify-content: center;
+    }
+}

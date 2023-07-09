@@ -40,7 +40,7 @@
 <script>
     $(document).ready(function(){
         var url = "https://projfrailecookies.000webhostapp.com/bd_select.php";
-        $.getJSON(ur, function(result){
+        $.getJSON(url, function(result){
             $.each(result, function(i, campo){
                 var id = campo.Id;
                 var nombre = campo.Nombre;
@@ -48,7 +48,7 @@
                 var negocio = campo.Negocio;
                 var direccion = campo.Direccion;
                 var cantidad = campo.Cantidad;
-                $("tbody").append("<tr><td>"+ nombre + "</td><td>" + telefono + "</td><td>" + negocio + "</td><td>" + direccion + "</td><td>" + cantidad + "</td></tr>")
+                $("tbody").append("<tr><td>"+ nombre + "</td><td>" + telefono + "</td><td>" + negocio + "</td><td>" + direccion + "</td><td>" + cantidad + "</td></tr>");
             })
 
         });
