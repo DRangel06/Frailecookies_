@@ -65,6 +65,8 @@
                     url: "https://projfrailecookies.000webhostapp.com/bd_insert.php",
                     data: datos,
                     success: function(data){
+                        console.lgo(datos);
+                        console.log(data);                        
                         if(data == "Correcto"){
                             alert("Usuario registrado correctamente");                            
                         } else {
