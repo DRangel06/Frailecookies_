@@ -8,7 +8,7 @@
         $cantidad = $_POST['Cantidad'];
 
         $sql = "INSERT INTO `registro` (`Id`, `Nombre`, `Telefono`, `Negocio`, `Direccion`, `Cantidad`) VALUES (NULL, '$nombre', '$telefono', '$negocio', '$direccion', '$cantidad');";
-        $ejecutar = $conexion ->query($sql);
+        $ejecutar = $conexion->query($sql);
 
         if($ejecutar){
             echo "Correcto";
