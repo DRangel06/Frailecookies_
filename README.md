@@ -24,17 +24,17 @@ La página de contacto contiene información de contacto para cualquier consulta
 
 ## Colaboradores
 
-Rangel Blanco Diego Alejandro
-Forero Rios Andrés Felipe
++ Rangel Blanco Diego Alejandro
++ Forero Rios Andrés Felipe
 
 ## Tecnologías utilizadas
 
-HTML
-CSS
-JavaScript
-Leaflet
-Bootstrap
-Google Fonts
++ HTML
++ CSS
++ JavaScript
++ Leaflet
++ Bootstrap
++ Google Fonts
 
 ## Contribuir
 
