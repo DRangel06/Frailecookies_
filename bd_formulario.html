@@ -2,6 +2,9 @@
 <html>
 
 <head>
+
+    <link rel="icon" href="img/Logo.png">
+
     <title>Registro de Interesados</title>
     <!-- Google Fonts Lato -->
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -92,9 +95,9 @@
     <div class="form-container">
         <i class="fas fa-arrow-left" onclick="goBack()"></i>
         <br>
-        <a href="https://www.atom.bio/frailecookies_"><img src="img/img.png" alt="Imagen descriptiva"></a>
+        <a href="bd_select.html"><img src="img/img.png" alt="Esto es un secreto"></a>
         <h1>¡Sé parte de Frailecookies!</h1>
-        <form action="bd_insert.php" method="post"> 
+        <form> 
             <label for="nombre"> (*) Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 
@@ -110,7 +113,7 @@
             <label for="direccion"> (*) Cantidad:</label>
             <input type="number" id="cantidad" name="cantidad" required>
 
-            <button type="submit">Enviar</button>
+            <button type="button" id="insert">Enviar</button>
         </form>
     </div>
 
@@ -137,7 +140,7 @@
             if($.trim(nombre).length > 0 & $.trim(telefono).length > 0 & $.trim(negocio).length > 0 & $.trim(direccion).length > 0 & $.trim(cantidad).length > 0){
                 $.ajax({
                     type: "POST",
-                    url: "https://frailecookies.000webhostapp.com/bd_insert.php",
+                    url: "https://projfrailecookies.000webhostapp.com/bd_insert.php",
                     data: datos,
                     success: function(data){
                         if(data == "Correcto"){
