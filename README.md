@@ -29,12 +29,12 @@ Forero Rios Andrés Felipe
 
 ## Tecnologías utilizadas
 
-HTML
-CSS
-JavaScript
-Leaflet
-Bootstrap
-Google Fonts
++ HTML
++ CSS
++ JavaScript
++ Leaflet
++ Bootstrap
++ Google Fonts
 
 ## Contribuir
 
