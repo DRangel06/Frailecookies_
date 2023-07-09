@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   
+    <script src="jquery-3.2.1.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <div class="content">
+      
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <i class="fas fa-arrow-left" onclick="goBack()"></i>
+                <h1 class="logo">Contáctanos <span>¡AHORA!</span></h1>
+                <h3>Completa los siguientes campos:</h3>
+                <form action="enviar.php" method="post" class="form_contact">
+                    <p>
+                        <label for="names"> (*) Nombre Completo</label>
+                        <input type="text" id="names" name="fullname" required>
+                    </p>
+                    <p>
+                        <label for="email"> (*) Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="phone"> Número de teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </p>
+                    <p>
+                        <label> Asunto</label>
+                        <input type="text" name="affair" required>
+                    </p>
+                    <p class="block">
+                        <label for="mensaje"> (*) Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
+                    </p>  
+                        
+                    <input type="submit" value="ENVIAR MENSAJE" id="btnSend">
+                    
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>Más información</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Universidad del Valle</li>
+                    <li><i class="fas fa-phone"></i> (+57) 311 757 1469</li>
+                    <li><i class="fas fa-phone"></i> (+57) 350 627 0620</li>
+                    <li><i class="fas fa-envelope-open-text"></i> Frailecookies@gmail.com</li>
+                </ul>
+                <p>Para nosotros es muy importante tu opinión, contáctanos y haznos saber en que podemos mejorar.</p>
+                <a href="https://www.atom.bio/Frailecookies_"</a><p>@Frailecookies_</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+
+</html>

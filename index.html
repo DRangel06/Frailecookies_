@@ -1,0 +1,170 @@
+<!-- RANGEL BLANCO DIEGO ALEJANDRO -->
+<!-- FORERO RIOS ANDRÉS FELIPE-->
+<!-- Proyecto Frailecookies_-->
+<!-- ING. TOPOGRÁFICA - SIG WEB - UNIVERSIDAD DEL VALLE -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Frailecookies</title>
+
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Leaflet.ScaleFactor -->
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.css">
+    <!-- Leaflet.EsayButton -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Leaflet.ControlLocate -->
+    <link rel="stylesheet" href="./plugins/L.Control.Locate/dist/L.Control.Locate.min.css" />
+    <!-- Leaflet.GeoSearch -->
+    <link rel="stylesheet" href="./plugins/L.GeoSearch/l.geosearch.css" />
+    <!-- Leaflet Routing Machine-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Google Fonts Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <header id="header">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#"> Frailecookies </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+           <a href="https://www.atom.bio/Frailecookies_"> <img src="./img/Logo.png" alt="Logo" id="Logo"></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./bd_formulario.html">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pagcontacto.html">Contacto</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div id="map"></div>
+    </main>
+
+    <footer class="bg-body-tertiary">
+        <a href="https://www.atom.bio/frailecookies_" target="_blank">@Frailecookies_</a>
+    </footer>
+
+    <!-- jQuery and JS bundle w/ Popper included -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPTS PARA FUNCIONAMIENTO DEL MAPA -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
+    <script src="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>
+    <script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
+    <!-- SCRIPT Easy Button -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.js"></script>
+    <!-- SCRIPT GEOLOCALIZACIÓN-->
+    <script src="./plugins/L.Control.Locate/src/L.Control.Locate.js"></script>
+    <script src="./plugins/L.GeoSearch/l.control.geosearch.js"></script>
+    <!-- SCRIPT GEOCODIFICADOR -->
+    <script src="./plugins/L.GeoSearch/l.geosearch.provider.esri.js"></script>
+    <!-- SCRIPT Leaflet.Graticule2 (CUADRÍCULA / GRILLA) -->
+    <script src="./plugins/L.Graticule/Leaflet.Graticule.js"></script>
+    <!-- SCRIPT CONEXIÓN GeoJSON -->
+    <script src="./layers/comuna.js"></script>
+    <script src="./layers/puntos.js"></script>
+    <!-- SCRIPT CONEXIÓN MAPA -->
+    <script src="./index.js" style="z-index:0"></script>
+    <!-- SCRIPT ROUTING MACHINE -->
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--  leaflet-control-geocoder by Per Liedman -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <!--  Leaflet.locate by Dominik Moritz -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+
+    <!-- SCRIPT DE LA CONFIGURACIÓN DEL MAPA -->
+    <script>
+        //LOCALIZACIÓN GPS
+        L.control.locate({
+            setView: 'false',
+            flyto: 'false',
+            drawCircle: 'false',
+            showCompass: 'true',
+            drawMarker: 'false',
+            keepCurrentZoomLevel: 'true',
+            locateOptions: {
+                enableHighAccuracy: true
+            }
+        }).addTo(map);
+
+        //BOTÓN DE BÚSQUEDA
+        L.Control.geocoder({
+            position: 'topleft'
+        }).addTo(map);
+
+        //CONFIGURACIÓN RETÍCULA MAPA
+        var graticule = L.latlngGraticule({
+            showLabel: true,
+            color: '#222',
+            zoomInterval: [{
+                start: 12,
+                end: 13,
+                interval: 0.05
+            }, {
+                start: 14,
+                end: 15,
+                interval: 0.025
+            }, {
+                start: 16,
+                end: 17,
+                interval: 0.01
+            }]
+        });
+
+        // Crear un botón de visualizar reticula con Leaflet.EasyButton
+        var graticuleButton = L.easyButton('<img src="./img/cartesiano.png"  align="absmiddle" height="16px">', function() {
+            if (map.hasLayer(graticule)) {
+                map.removeLayer(graticule);
+            } else {
+                graticule.addTo(map);
+            }
+        }, 'Reticula').addTo(map);
+
+        // Generar ruta entre dos puntos
+        var ruta = L.Routing.control({
+            waypoints: [
+                L.latLng(3.47, -76.52),
+                L.latLng(3.38, -76.53)
+            ],
+            language: 'es',
+            routeWhileDragging: true
+        }).addTo(map);
+    </script>
+</body>
+
+</html>

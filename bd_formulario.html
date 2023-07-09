@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registro de Interesados</title>
+    <!-- Google Fonts Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="bd_geturl.js"></script>
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #C2E1C2;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #412b17;
+            padding: 50px;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .form-container img {
+            position: absolute;
+            width: 70px;
+            padding-left: 5%;
+        }
+        
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .form-container button {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .form-container h1 {
+            text-align: center;
+        }
+        
+        .form-container i {
+            color: white;
+            /* El color de la flecha */
+            position: relative;
+            cursor: pointer;
+            font-size: 24px;
+            /* El tamaño de la flecha */
+        }
+        
+        @media(max-width: 700px) {
+            body {
+                padding: 4em;
+            }
+            .form-container {
+                display: grid;
+            }
+            .form-container h1 {
+                text-align: center;
+                justify-content: center;
+                display: block;
+            }
+            img {
+                display: none;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <i class="fas fa-arrow-left" onclick="goBack()"></i>
+        <br>
+        <a href="https://www.atom.bio/frailecookies_"><img src="img/img.png" alt="Imagen descriptiva"></a>
+        <h1>¡Sé parte de Frailecookies!</h1>
+        <form action="bd_insert.php" method="post"> 
+            <label for="nombre"> (*) Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="telefono"> (*) Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" required>
+
+            <label for="negocio"> (*) Negocio:</label>
+            <input type="text" id="negocio" name="negocio" required>
+
+            <label for="direccion"> (*) Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="direccion"> (*) Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#insert").click(function(){
+            var nombre = $('#nombre').val();
+            var telefono = $('#telefono').val();
+            var negocio = $('#negocio').val();
+            var direccion = $('#direccion').val();
+            var cantidad = $('#cantidad').val();
+
+            var datos = "nombre= " + nombre + "&telefono=" + telefono + "&negocio=" + negocio + "&direccion=" + direccion + "&cantidad=" + cantidad + "&insert=";
+
+            if($.trim(nombre).length > 0 & $.trim(telefono).length > 0 & $.trim(negocio).length > 0 & $.trim(direccion).length > 0 & $.trim(cantidad).length > 0){
+                $.ajax({
+                    type: "POST",
+                    url: "https://frailecookies.000webhostapp.com/bd_insert.php",
+                    data: datos,
+                    success: function(data){
+                        if(data == "Correcto"){
+                            alert("Usuario registrado correctamente")                            
+                        } else {
+                            alert("Error");
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

@@ -1,0 +1,60 @@
+/* Estilo para el cuerpo de la página */
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Estilo para el header */
+#header {
+  background-image: url('./img/header.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para el cuerpo */
+main {
+  flex-basis: 85%;
+  width: 100%;
+}
+
+/* Estilo para el mapa */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilo para el footer */
+footer {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background: transparent;
+  border: none;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link {
+  color: #4b2e13;
+  font-size: 20px;
+  font-weight: bold; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#Logo{
+  max-height: 50px;
+}
