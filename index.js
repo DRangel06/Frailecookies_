@@ -7,14 +7,6 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 });
 basemap.addTo(map);
 
-//CAPA BASE WFS
-var vias = L.tileLayer.wms('http://ws-idesc.cali.gov.co:8081/geoserver/wms?service=WMS&version=1.1.0',
-    {
-        layers: 'pot_2014:mov_jerarquizacion_vial',
-        format: 'image/png',
-        transparent: true,
-    });
-
 //GeoJSON
 var comuna = L.geoJSON(comuna).addTo(map);
 var puntos = L.geoJSON(puntos, {
@@ -40,8 +32,7 @@ var baseLayer = {
     "Mapa Base": basemap
 };
 var overlays = {
-    "Panaderías": puntos,
-    "Comuna 17": comuna,
-    "Vías": vias
+    "Frailepuntos": puntos,
+    "Comuna 17": comuna
 };
 L.control.layers(baseLayer, overlays).addTo(map);
